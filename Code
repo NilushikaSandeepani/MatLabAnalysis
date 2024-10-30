@@ -1,7 +1,7 @@
 % Define data points
-X1 = [2,6,6,10,2,2,6,6,6,10,10,2,6,6,10];
-X2 = [15,15,15,15,82.5,82.5,82.5,82.5,82.5,82.5,82.5,150,150,150,150];
-Y = [86.67,85.20,79.00,80.67,78.00,87.60,85.33,83.33,83.67,79.00,84.80,85.67,78.00,85.80,84.67];
+X1 = [2,8,8,12,2,2,8,8,8,12,12,2,8,8,12]; %Independent parameter 1
+X2 = [15,15,18,18,18,20,20,20,20,20,20];  %Independent parameter 2
+Y = [12,13,14,15,18,33,45,68,78,88,97,98]; % Predicted/result dataset
 
 % Fit a quadratic model
 data = table(X1', X2', Y', 'VariableNames', {'X1', 'X2', 'Y'});
@@ -31,9 +31,9 @@ surf(X1_grid, X2_grid, Y_grid);
 hold on;
 plot3(max_X1, max_X2, max_Y, 'ro', 'MarkerSize', 5, 'MarkerFaceColor', 'r'); % Mark the max point
 xlabel('ph');
-ylabel('Weight(mg)');
-zlabel('Absorbtion (%)');
-title('Response Surface for CE Dendro');
+ylabel('Parameter1'); %Change axis name as you want to see on the plot
+zlabel('Parameter1'); %Change axis name as you want to see on the plot
+title('Response Surface for Something'); %change the plot name that will display on the top of the plot
 colormap jet;
 colorbar;
 hold off;
@@ -43,8 +43,8 @@ figure;
 contour(X1_grid, X2_grid, Y_grid, 20); % 20 contour levels
 hold on;
 plot(max_X1, max_X2, 'ro', 'MarkerSize', 5, 'MarkerFaceColor', 'r'); % Mark the max point
-xlabel('ph');
-ylabel('weight(mg)');
-title('Response Surface Contour Plot for Chemically Activated Dendro');
+xlabel('X'); %Change axis name as you want to see on the plot
+ylabel('Y'); %Change axis name as you want to see on the plot
+title('Response Surface Contour Plot for Something');
 colorbar;
 hold off;
